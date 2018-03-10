@@ -1,0 +1,31 @@
+
+<div class="container-fluid">
+    <div class="container">
+      <div class="container-fluid">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li (click)= "navigateHome()"><a>Home</a></li>
+        <li (click)= "navigateCategory()"> <a>{{tempCatName}}</a></li>
+        <li class="active">{{tempSubName}}</li>
+      </ol>
+    </div>	
+  </div>
+      <div class="row">
+        <div *ngIf= "subCatData == '' || subCatData == 'undefined '">
+          <h1> No Data Found ...</h1>
+        </div>
+        <div class="col-sm-3" *ngFor= "let key of subCatData" >
+            {{key.image}}
+          <div class="product_box" >
+            <figure>
+              <img (click)= "navigateDetail(key.catName)" src="assets/img/{{key.image}}" alt="img" />
+            </figure>
+            <div class="fig-caption">
+              {{key.name}}
+            </div>	
+          </div>	
+        </div>	
+      </div>	
+    </div>
+  </div>	
+  

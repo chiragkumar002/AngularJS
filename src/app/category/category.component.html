@@ -1,0 +1,22 @@
+
+<div class="container-fluid">
+	<div class="container">
+			Category Name :  <b> {{catName}} </b>
+		<div class="row">
+
+			<div *ngIf= "category == '' || category == 'undefined '">
+				<h1> No Data Found ...</h1>
+			</div>
+			<div class="col-sm-3" *ngFor= "let key of category" >
+				<div class="product_box" >
+					<figure>
+						<img (click)= "navigateDetail(key.catName)" src="assets/img/{{key.catImage}}" alt="img" />
+					</figure>
+					<div class="fig-caption">
+						{{key.catName}}
+					</div>	
+				</div>	
+			</div>	
+		</div>	
+	</div>
+</div>	
